@@ -12,3 +12,5 @@ models/*.joblib
 
 # Optional local Streamlit secrets
 .streamlit/secrets.toml
+.agents/
+.venv/
