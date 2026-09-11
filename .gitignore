@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Models generated locally
+models/*.joblib
+
+# Optional local Streamlit secrets
+.streamlit/secrets.toml
