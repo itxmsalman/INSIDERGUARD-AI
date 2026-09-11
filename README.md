@@ -2,31 +2,43 @@
 
 **Behavioural Security Intelligence Platform**
 
-A small, professional-looking AI cybersecurity application built for practical learning and PhD preparation.
+INSIDERGUARD AI is an experimental cybersecurity and machine-learning prototype developed to explore AI-assisted insider-threat analysis using behavioural activity data.
+
+The project combines traditional machine learning, a neural-network baseline, interactive analysis, and a SOC-inspired dashboard within a reproducible Python workflow.
+
+---
 
 ## What it demonstrates
 
 - Python application structure
-- Pandas data handling
+- Pandas-based data processing
 - Scikit-learn Random Forest classification
 - PyTorch neural-network baseline
-- Side-by-side two-model comparison
+- Side-by-side model comparison
 - Model training and persistence
-- Interactive prediction
+- Interactive behavioural-risk prediction
 - Streamlit dashboard development
-- Basic model feature importance
-- Automated tests
+- Basic feature-importance analysis
+- Automated testing
 - Git/GitHub project organisation
 
-## ⚠️ Important research note
+---
 
-The included dataset is **synthetic demonstration data**. The application is an educational prototype.
+## ⚠️ Research and data notice
 
-The current model output must NOT be interpreted as a real insider-threat assessment, employee risk score, or production security decision.
+The dataset included in this repository is **synthetic demonstration data** created for development, experimentation, and learning purposes.
 
-For research, replace the demo data with an appropriately obtained dataset and document preprocessing, licensing, ethics, experimental design and evaluation.
+The current model outputs must **not** be interpreted as real insider-threat assessments, employee risk scores, or production security decisions.
 
-## Quick start - macOS
+Future research experiments should use appropriately obtained datasets with clearly documented preprocessing, licensing, ethical considerations, experimental design, and evaluation methodology.
+
+Raw third-party research datasets, including the CERT Insider Threat Dataset, should remain outside this public repository unless redistribution is explicitly permitted.
+
+---
+
+## Quick start
+
+### macOS / Linux
 
 ```bash
 python3 -m venv .venv
@@ -37,15 +49,19 @@ python src/predict.py
 streamlit run app.py
 ```
 
-Open the browser URL shown by Streamlit, normally:
+The Streamlit dashboard normally opens at:
 
 `http://localhost:8501`
+
+---
 
 ## Run tests
 
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+---
 
 ## Project layout
 
@@ -63,6 +79,7 @@ INSIDERGUARD-AI/
 ├── src/
 │   ├── model_utils.py
 │   ├── train.py
+│   ├── train_all.py
 │   └── predict.py
 ├── models/
 ├── notebooks/
@@ -70,11 +87,16 @@ INSIDERGUARD-AI/
 ├── tests/
 │   └── test_pipeline.py
 └── docs/
+    ├── DEPLOYMENT.md
+    ├── RESEARCH_ROADMAP.md
+    └── TECHNICAL_ROADMAP.md
 ```
+
+---
 
 ## Dashboard
 
-The app contains:
+The application contains:
 
 - 🏠 Overview
 - 🔍 Live Analysis
@@ -84,25 +106,203 @@ The app contains:
 - 🖥️ Terminal
 - ⚙️ Settings
 
-The visual language is inspired by modern SOC dashboards and Linux/terminal environments, while using original project branding.
+The interface draws inspiration from contemporary Security Operations Centre (SOC) dashboards and terminal-based security environments while using original INSIDERGUARD AI branding.
 
-## Model training
+---
 
-Run `python src/train_all.py` to retrain both the Random Forest and PyTorch baselines and save their model artefacts under `models/`. The bundled results are for the tiny synthetic demo dataset only and are not research or production performance.
+## Machine-learning models
 
-## Future research direction
+The current prototype compares two baseline approaches.
 
-The project can later evolve toward:
+### Random Forest
 
-1. PyTorch neural-network baseline
-2. Explainable AI
-3. Privacy-preserving ML
-4. Federated learning
-5. Real CERT insider-threat experiments
+A Scikit-learn ensemble classifier used as the traditional machine-learning baseline.
 
-These later stages should be implemented only after the underlying concepts are understood.
+### PyTorch Neural Network
 
-## Supervisor handoff
+A small neural-network classifier used to explore a deep-learning approach using the same behavioural feature set.
 
-Once you have personally learned and tested the project, publish the cleaned repository to GitHub and share the repository link with Dr Yanran.
+To retrain both models, run:
 
+```bash
+python src/train_all.py
+```
+
+Generated model artefacts are stored under:
+
+```text
+models/
+```
+
+Results generated using the bundled synthetic dataset are demonstration results only and should not be interpreted as research or real-world performance.
+
+---
+
+## Behavioural features
+
+The demonstration workflow uses behavioural activity features such as:
+
+- After-hours login activity
+- File-access activity
+- Email activity
+- Device activity
+- Web activity
+
+These features are used to demonstrate the machine-learning workflow and do not represent a validated real-world insider-risk model.
+
+---
+
+## Model workflow
+
+```text
+Behavioural data
+        ↓
+Data preprocessing
+        ↓
+Feature selection
+        ↓
+Train/test split
+        ↓
+┌─────────────────────────────┐
+│       Model comparison      │
+│                             │
+│  Random Forest              │
+│  PyTorch Neural Network     │
+└─────────────────────────────┘
+        ↓
+Model evaluation
+        ↓
+Saved model artefacts
+        ↓
+Interactive prediction
+        ↓
+Streamlit dashboard
+```
+
+---
+
+## Evaluation
+
+The project supports evaluation using common classification metrics including:
+
+- Precision
+- Recall
+- F1-score
+- Confusion matrix
+- Prediction output
+- Basic feature importance
+
+Any reported results produced from the bundled synthetic dataset should be treated only as technical demonstration results.
+
+---
+
+## Data
+
+`data/behavioural_demo.csv` contains synthetic demonstration data created for the INSIDERGUARD AI prototype.
+
+It is **not** the CERT Insider Threat Dataset.
+
+Any model results produced using this file are for demonstration purposes only and must not be interpreted as real-world or validated research performance.
+
+For future research, datasets such as the CERT Insider Threat Dataset should be obtained from authorised sources. Raw research data should remain outside the public GitHub repository unless redistribution is explicitly permitted by the dataset provider or licence.
+
+The public repository is intended to contain code, documentation, reproducible workflows, and appropriately shareable demonstration data only.
+
+See `data/README.md` for further information about the demonstration dataset.
+
+---
+
+## Research direction
+
+Future development may investigate:
+
+1. Explainable AI using methods such as SHAP or LIME
+2. Privacy-preserving machine learning
+3. Federated learning across distributed organisational environments
+4. More advanced behavioural feature engineering
+5. Experiments using appropriately obtained CERT insider-threat data
+6. Evaluation under realistic class imbalance and non-IID conditions
+7. Analyst-oriented explanations and decision-support mechanisms
+8. Integration with SIEM and security-monitoring environments
+
+These extensions are intended as future research directions rather than capabilities claimed by the current prototype.
+
+---
+
+## Documentation
+
+Additional project documentation is available under the `docs/` directory:
+
+- `RESEARCH_ROADMAP.md` — current implementation, planned research extensions, limitations, and longer-term objectives
+- `TECHNICAL_ROADMAP.md` — technical development across Python, data processing, machine learning, evaluation, and application development
+- `DEPLOYMENT.md` — local, Streamlit, and Proxmox deployment guidance, including security and reproducibility considerations
+
+---
+
+## Project status
+
+This repository contains a research and learning prototype developed to explore AI-based insider-threat detection using behavioural activity data.
+
+The current implementation demonstrates an end-to-end workflow involving data preparation, model training, model comparison, evaluation, prediction, and interactive visualisation.
+
+The project will continue to evolve as part of my broader research development in artificial intelligence, cybersecurity, insider risk, and socio-technical security.
+
+---
+
+## Limitations
+
+The current version has several important limitations:
+
+- It uses synthetic demonstration data
+- It has not been validated in a real organisational environment
+- It is not a production security system
+- It does not provide a validated employee risk score
+- The neural-network model is a baseline implementation
+- Current evaluation results are not representative of operational performance
+- Real-world deployment would require stronger validation, privacy safeguards, governance, and ethical review
+
+---
+
+## Responsible use
+
+INSIDERGUARD AI is intended for educational, experimental, and research-development purposes.
+
+It should not be used to make employment, disciplinary, monitoring, or operational security decisions about real individuals.
+
+Any future research involving real behavioural or employee data should include appropriate ethical review, privacy safeguards, lawful data processing, transparency, access controls, and organisational governance.
+
+---
+
+## Technologies
+
+- Python
+- Pandas
+- Scikit-learn
+- PyTorch
+- Streamlit
+- Jupyter Notebook
+- Git
+- GitHub
+
+---
+
+## Author
+
+**Muhammad Salman**
+
+Research interests include:
+
+- Artificial Intelligence
+- Cybersecurity
+- Insider Threat Detection
+- Behavioural Security
+- Cyber Resilience
+- Socio-Technical Security
+- Explainable AI
+- Privacy-Preserving Machine Learning
+
+---
+
+## Research profile
+
+INSIDERGUARD AI supports my broader academic interest in understanding how artificial intelligence and behavioural data can contribute to cybersecurity research while maintaining responsible, transparent, and privacy-aware approaches to security analysis.
