@@ -2,16 +2,50 @@
 
 **Behavioural Security Intelligence Platform**
 
-INSIDERGUARD AI is an experimental cybersecurity and machine-learning prototype developed to explore AI-assisted insider-threat analysis using behavioural activity data.
+INSIDERGUARD AI is an experimental cybersecurity and machine-learning research prototype developed to explore how behavioural activity data and artificial intelligence can support the analysis of potential insider-risk patterns.
 
-The project combines traditional machine learning, a neural-network baseline, interactive analysis, and a SOC-inspired dashboard within a reproducible Python workflow.
+The project combines traditional machine learning, a neural-network baseline, behavioural feature analysis, interactive prediction, and a SOC-inspired Streamlit dashboard within a reproducible Python workflow.
+
+The current implementation is intended as a research-development and learning environment rather than a production insider-threat detection system.
 
 ---
 
-## What it demonstrates
+## Research Motivation
 
-- Python application structure
-- Pandas-based data processing
+Insider threats present a complex cybersecurity challenge because risk may arise from the interaction of human behaviour, organisational processes, access privileges, and technical systems.
+
+Traditional rule-based security controls may identify known events but can struggle to capture behavioural patterns that develop across multiple types of activity.
+
+INSIDERGUARD AI explores the technical foundations of using machine-learning models to analyse behavioural indicators while recognising the wider requirements of:
+
+- Explainability
+- Privacy
+- Ethical use of behavioural data
+- Organisational governance
+- Human oversight
+- Responsible security decision-making
+
+This creates a foundation for future research into AI-assisted insider-risk analysis within socio-technical cybersecurity environments.
+
+---
+
+## Current Research Questions
+
+The prototype supports exploration of questions such as:
+
+1. How can behavioural activity features be represented for machine-learning-based insider-risk analysis?
+2. How do traditional machine-learning and neural-network baselines behave when trained on the same behavioural feature set?
+3. How can model predictions and behavioural indicators be presented in a form that supports human security analysts?
+4. What privacy, governance, explainability, and ethical challenges arise when AI is applied to behavioural security monitoring?
+
+The current implementation does not claim to answer these questions conclusively. It provides an experimental platform from which more rigorous research can be developed.
+
+---
+
+## What the Prototype Demonstrates
+
+- Python application development
+- Pandas-based behavioural data processing
 - Scikit-learn Random Forest classification
 - PyTorch neural-network baseline
 - Side-by-side model comparison
@@ -19,12 +53,14 @@ The project combines traditional machine learning, a neural-network baseline, in
 - Interactive behavioural-risk prediction
 - Streamlit dashboard development
 - Basic feature-importance analysis
+- Classification evaluation
 - Automated testing
-- Git/GitHub project organisation
+- Reproducible project organisation
+- Git/GitHub software-development workflow
 
 ---
 
-## ⚠️ Research and data notice
+## ⚠️ Research and Data Notice
 
 The dataset included in this repository is **synthetic demonstration data** created for development, experimentation, and learning purposes.
 
@@ -36,7 +72,7 @@ Raw third-party research datasets, including the CERT Insider Threat Dataset, sh
 
 ---
 
-## Quick start
+## Quick Start
 
 ### macOS / Linux
 
@@ -55,7 +91,7 @@ The Streamlit dashboard normally opens at:
 
 ---
 
-## Run tests
+## Run Tests
 
 ```bash
 python -m unittest discover -s tests -v
@@ -63,7 +99,7 @@ python -m unittest discover -s tests -v
 
 ---
 
-## Project layout
+## Project Layout
 
 ```text
 INSIDERGUARD-AI/
@@ -110,7 +146,7 @@ The interface draws inspiration from contemporary Security Operations Centre (SO
 
 ---
 
-## Machine-learning models
+## Machine-Learning Models
 
 The current prototype compares two baseline approaches.
 
@@ -138,7 +174,7 @@ Results generated using the bundled synthetic dataset are demonstration results 
 
 ---
 
-## Behavioural features
+## Behavioural Features
 
 The demonstration workflow uses behavioural activity features such as:
 
@@ -152,7 +188,7 @@ These features are used to demonstrate the machine-learning workflow and do not 
 
 ---
 
-## Model workflow
+## Model Workflow
 
 ```text
 Behavioural data
@@ -212,7 +248,7 @@ See `data/README.md` for further information about the demonstration dataset.
 
 ---
 
-## Research direction
+## Research Direction
 
 Future development may investigate:
 
@@ -239,7 +275,7 @@ Additional project documentation is available under the `docs/` directory:
 
 ---
 
-## Project status
+## Project Status
 
 This repository contains a research and learning prototype developed to explore AI-based insider-threat detection using behavioural activity data.
 
@@ -263,7 +299,7 @@ The current version has several important limitations:
 
 ---
 
-## Responsible use
+## Responsible Use
 
 INSIDERGUARD AI is intended for educational, experimental, and research-development purposes.
 
@@ -286,6 +322,16 @@ Any future research involving real behavioural or employee data should include a
 
 ---
 
+## Academic and Research Relevance
+
+INSIDERGUARD AI supports my broader research interest in insider risk, artificial intelligence, cyber resilience, and socio-technical security.
+
+The project provides practical experience in translating a cybersecurity problem into an experimental machine-learning workflow while also highlighting limitations relating to data quality, explainability, privacy, governance, and human oversight.
+
+These themes connect with my longer-term research interest in resilient cybersecurity governance and the interaction between human behaviour, organisational processes, and technical security controls.
+
+---
+
 ## Author
 
 **Muhammad Salman**
@@ -300,9 +346,3 @@ Research interests include:
 - Socio-Technical Security
 - Explainable AI
 - Privacy-Preserving Machine Learning
-
----
-
-## Research profile
-
-INSIDERGUARD AI supports my broader academic interest in understanding how artificial intelligence and behavioural data can contribute to cybersecurity research while maintaining responsible, transparent, and privacy-aware approaches to security analysis.
